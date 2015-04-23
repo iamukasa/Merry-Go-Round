@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView android:text="@string/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        />
+    <EditText
+
+        android:id="@+id/editAdminName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Enter your name"
+        />
+    <EditText
+
+        android:id="@+id/editAdminNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/ent_admin_no"
+        />
+    <Button
+        android:id="@+id/btnEnterAdminNo"
+        android:text="@string/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+   <TextView
+android:hint="@string/chama_name11"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/txtChamaName"
+       />
+    <EditText
+        android:id="@+id/editChamaName"
+        android:hint="@string/chama_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSpinShow"
+        android:text="How long does your cycle take"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerstart"
+        android:layout_marginBottom="30dp"
+
+        ></Spinner>
+
+    <Button
+        android:id="@+id/btnEnterChamaName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        />
+
+
+
+</LinearLayout>

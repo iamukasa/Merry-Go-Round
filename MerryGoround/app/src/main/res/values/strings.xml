@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MerryGoround</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_add_members">AddMembers</string>
+    <string name="title_activity_register_group">RegisterGroup</string>
+    <string name="welcome">Welcome to Merry go round please enter your number to register</string>
+    <string name="chama_name">Enter Chama name</string>
+    <string name="chama_name11">Now enter the name you desire for your chama</string>
+    <string name="ent_admin_no">Enter your phone number</string>
+    <string name="save">save</string>
+
+    <string name="add_members">Enter a mobile number and press to save to chama</string>
+    <string name="send_to_new_memeber">Hi, I have added you to my merry go round</string>
+    <string name="title_activity_view_members">ViewMembers</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_choose_frequency">ChooseFrequency</string>
+    <string name="title_activity_view_single_member">ViewSingleMemberActivity</string>
+
+
+</resources>
