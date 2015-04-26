@@ -36,7 +36,7 @@ ContributionsItemAdapter adept;
     Button s;
     EditText ds,ds2;
     int drogba=0;
-      String Kal;
+      String Kal,Kal2;
     ArrayList<ContributionsItems> e;
 
 
@@ -108,6 +108,7 @@ ContributionsItemAdapter adept;
 
 
         Kal= membersList.get(position).getPhoneNo();
+        Kal2= membersList.get(position).getName();
  s.setOnClickListener(new View.OnClickListener() {
      @Override
      public void onClick(View v) {
@@ -117,20 +118,22 @@ ContributionsItemAdapter adept;
          werd.add(e);
          ard.add(f);
 
-         msgList.add(new ContributionsItems(Kal  ,werd.get(drogba),ard.get(drogba)));
+         msgList.add(new ContributionsItems(Kal2  ,werd.get(drogba),ard.get(drogba)));
          drogba++;
 
          adept=new ContributionsItemAdapter(getApplicationContext(),R.layout.contributions_item,msgList);
          bullshit.setAdapter(adept);
 
+         Gson gsone = new Gson();
+         String jsonContributions= gsone.toJson(msgList);
+         SharedPreferences.Editor editor = mChamaSettings.edit();
+         editor.putString(CHAMA_CURRENT_CONTRIBUTIONS_LIST,jsonContributions );
+         editor.commit();
+
      }
 
  });
-        Gson gsone = new Gson();
-        String jsonContributions= gsone.toJson(msgList);
-        SharedPreferences.Editor editor = mChamaSettings.edit();
-        editor.putString(CHAMA_CURRENT_CONTRIBUTIONS_LIST,jsonContributions );
-        editor.commit();
+
 
 
 
@@ -177,6 +180,8 @@ ContributionsItemAdapter adept;
         super.onDestroy();
     }
     public void onStart(){
+        bullshit=(ListView)findViewById(R.id.listContributions);
+
         if(mChamaSettings.contains(CHAMA_CURRENT_CONTRIBUTIONS_LIST)) {
             String jsonAllMembers=mChamaSettings.getString(CHAMA_CURRENT_CONTRIBUTIONS_LIST,null);
 
@@ -185,10 +190,10 @@ ContributionsItemAdapter adept;
             msgList = gson.fromJson(jsonAllMembers, listType);
             ContributionsItemAdapter adapters = new ContributionsItemAdapter(getApplicationContext(),
                 R.layout.contributions_item, msgList);
+//            bullshit.setTextFilterEnabled(true);
+//            adapters.getFilter().filter(Kal2);
 
-           bullshit.setAdapter(adapters);
-            bullshit.setTextFilterEnabled(true);
-           adapters.getFilter().filter(Kal);
+          bullshit.setAdapter(adapters);
 
         }
         super.onStart();
